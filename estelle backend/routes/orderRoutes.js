@@ -1,0 +1,13 @@
+const ordercontroller = require('../controller/ordercontroller.js')
+const express =require('express')
+const router = express.Router()
+router.route('/placeorder')
+.post(ordercontroller.addorder)
+router.route('/orders')
+.get(ordercontroller.getallorder)
+router.route('/placeorder/:id')
+.get(ordercontroller.singleorder)
+.delete(ordercontroller.deleteorder)
+router.route('/order/:id')
+.patch(ordercontroller.confirmorder)
+module.exports =router 
